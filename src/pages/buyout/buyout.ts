@@ -20,5 +20,9 @@ export class BuyoutPage implements OnInit {
     this.name = this.navParams.get('passedName');
   }
 
+  onBuyClick() {
+    this.navCtrl.popToRoot();
+  }
+
 
 }

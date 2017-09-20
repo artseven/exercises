@@ -16,10 +16,11 @@
     <ion-item-group>
         <ion-item>Tapped: {{ tap }}</ion-item>
         <ion-item>Pressed: {{ press }}</ion-item>
+
     </ion-item-group>
     <hr>
 
-    <app-reset-component></app-reset-component>
+    <app-reset-component (change)="onResetPressed($event)"></app-reset-component>
 
     <ion-row>
         <ion-col col-6>

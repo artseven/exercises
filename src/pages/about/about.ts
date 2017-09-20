@@ -1,5 +1,4 @@
-import { ResetComponent } from './../../components/reset.component';
-import { Component, Input } from '@angular/core';
+import { Component, Input, EventEmitter } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 @Component({
@@ -7,31 +6,25 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'about.html'
 })
 export class AboutPage {
-  @Input() change: boolean; 
-
+  evt;
   tap: number = 0;
   press: number = 0;
   constructor(public navCtrl: NavController) {
 
   }
   
-
-  resetCheck() {
-    if (this.change === true)  {
-      this.tap = 0;
-      this.press = 0;
-      console.log('RESETTED!')
-      return this.tap
-    }
-  }
-
-
   onElementTapped() {
     this.tap++;
   }
 
   onElementPressed() {
     this.press++;
+  }
+
+  onResetPressed(evt) {
+    console.log(evt);
+    this.tap = evt;
+    this.press = evt;
   }
 
 }

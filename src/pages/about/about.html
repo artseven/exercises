@@ -14,8 +14,8 @@
     <hr>
 
     <ion-item-group>
-        <ion-item>Tapped: 0</ion-item>
-        <ion-item>Pressed: 0</ion-item>
+        <ion-item>Tapped: {{ tap }}</ion-item>
+        <ion-item>Pressed: {{ press }}</ion-item>
     </ion-item-group>
     <hr>
 
@@ -33,10 +33,12 @@
 
     <ion-row>
         <ion-col col-6>
-            <div text-center class="gesture-button">Tap here</div>
+            <div text-center class="gesture-button"
+              (tap)="onElementTapped()">Tap here</div>
         </ion-col>
         <ion-col col-6>
-            <div text-center class="gesture-button">Press here</div>
+            <div text-center class="gesture-button"
+              (press)="onElementPressed()">Press here</div>
         </ion-col>
     </ion-row>
 

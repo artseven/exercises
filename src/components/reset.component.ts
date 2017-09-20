@@ -17,10 +17,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
     `
 })
 export class ResetComponent {
-    @Output() all: EventEmitter<any> = new EventEmitter();
+    @Output() change: EventEmitter<boolean> = new EventEmitter();
 
     onResetAll() {
-        this.all.emit(null);
+        this.change.emit(true);
         console.log('I should reset taps and presses to 0');
     }
 

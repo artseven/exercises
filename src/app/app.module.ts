@@ -1,3 +1,4 @@
+import { ResetComponent } from '../components/reset.component';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
@@ -20,7 +21,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     HomePage,
     TabsPage,
     ShopPage,
-    BuyoutPage
+    BuyoutPage,
+    ResetComponent
   ],
   imports: [
     BrowserModule,

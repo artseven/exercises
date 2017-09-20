@@ -14,11 +14,9 @@ export class AboutPage {
 
   onElementTapped() {
     this.tap++;
-    console.log(this.tap);
   }
 
   onElementPressed() {
-    console.log('I was pressed');
     this.press++;
   }
 

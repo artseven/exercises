@@ -1,11 +1,11 @@
-import { Component, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
     selector: 'app-reset-component',
     template: `
     <ion-row>
         <ion-col col-4>
-            <button ion-button small color="danger" (click)="onResetAll()">Reset All</button>
+            <button ion-button small color="danger" (click)="onResetAll($event)">Reset All</button>
         </ion-col>
         <ion-col col-4>
             <button ion-button small color="danger" (click)="onResetTaps()">Reset "Taps"</button>
@@ -17,7 +17,10 @@ import { Component, Output } from '@angular/core';
     `
 })
 export class ResetComponent {
+    @Output() all: EventEmitter<any> = new EventEmitter();
+
     onResetAll() {
+        this.all.emit(null);
         console.log('I should reset taps and presses to 0');
     }
 

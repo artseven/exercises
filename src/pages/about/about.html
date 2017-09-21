@@ -9,8 +9,8 @@
 <ion-content padding>
 
     <h1 text-center>Enter the right Code</h1>
-    <p text-center>You won!</p>
-
+    <p text-center *ngIf="!checkForWin(); else win_message">Tap twice, press four times</p>
+    <ng-template #win_message text-center>You won!</ng-template>
 
     <ion-row>
         <ion-col>
@@ -25,7 +25,7 @@
         </ion-col>
     </ion-row>
 
-    <app-reset-component (change)="onResetPressed($event)"></app-reset-component>
+    <app-reset-component (didReset)="onResetPressed($event)"></app-reset-component>
 
     <ion-row>
         <ion-col col-6>

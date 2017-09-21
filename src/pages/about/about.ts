@@ -21,10 +21,23 @@ export class AboutPage {
     this.press++;
   }
 
-  onResetPressed(evt) {
-    console.log(evt);
-    this.tap = evt;
-    this.press = evt;
+  onResetPressed(resetType: string) {
+    switch (resetType) {
+      case 'tap': 
+        this.tap = 0;
+        break;
+      case 'press':
+        this.press = 0;
+        break;
+      default: 
+        this.tap = 0;
+        this.press = 0;
+    }
   }
+  
+  checkForWin() {
+    return this.tap == 2 && this.press == 4;
+  }
+
 
 }

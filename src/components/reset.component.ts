@@ -8,10 +8,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
             <button ion-button small color="danger" (click)="onResetAll()">Reset All</button>
         </ion-col>
         <ion-col col-4>
-            <button ion-button small color="danger" (click)="onResetTaps()">Reset "Taps"</button>
+            <button ion-button small color="danger" (click)="onResetTaps('taps')">Reset "Taps"</button>
         </ion-col>
         <ion-col col-4>
-            <button ion-button small color="danger" (click)="onResetPresses()">Reset "Presses"</button>
+            <button ion-button small color="danger" (click)="onResetPresses('presses')">Reset "Presses"</button>
         </ion-col>
     </ion-row>
     `
@@ -31,7 +31,7 @@ export class ResetComponent {
     }
 
     onResetPresses() {
-        this.taps.emit(0);
+        this.presses.emit(0);
         console.log('I should reset presses to 0');
     }
 }

@@ -11,14 +11,19 @@
     <h1 text-center>Enter the right Code</h1>
     <p text-center>You won!</p>
 
-    <hr>
 
-    <ion-item-group>
-        <ion-item>Tapped: {{ tap }}</ion-item>
-        <ion-item>Pressed: {{ press }}</ion-item>
-
-    </ion-item-group>
-    <hr>
+    <ion-row>
+        <ion-col>
+            <ion-list>
+                <ion-item>
+                    <p>Tapped: {{ tap }}</p>
+                </ion-item>
+                <ion-item>
+                    <p>Pressed: {{ press }}</p>
+                </ion-item>
+            </ion-list>
+        </ion-col>
+    </ion-row>
 
     <app-reset-component (change)="onResetPressed($event)"></app-reset-component>
 
